@@ -1,7 +1,7 @@
 profile:
   name: "Your Name"
   graduation: "YYYY-MM"
-  authorization: "Work Authorization Status"
+  authorization: "Your Work Authorization Status"
   needs_sponsorship: false
 
 # Multiple tracks — system finds jobs matching any of them
@@ -10,8 +10,129 @@ targets:
     titles:
       - "software engineering intern"
       - "software engineer intern"
-    season: "summer, fall, spring"
+      - "software engineer internship"
+      - "software development engineer intern"
+      - "software developer intern"
+      - "swe intern"
+      - "sde intern"
+    season: "summer, fall, spring"    # optional: filter internships by season (e.g. summer, fall, spring)
   - track: regular_sde
     titles:
-      - "Software Engineer"
-      - "Software Development Engineer"
+      - "software engineer"
+      - "software development engineer"
+      - "software developer"
+      - "backend engineer"
+      - "full stack engineer"
+      - "sde"
+      - "swe"
+  - track: new_grad
+    titles:
+      - "new grad"
+      - "university graduate"
+      - "early career"
+      - "entry level software engineer"
+      - "associate software engineer"
+      - "software engineer i"
+  - track: cloud
+    titles:
+      - "cloud engineer"
+      - "devops engineer"
+      - "site reliability"
+      - "platform engineer"
+      - "infrastructure engineer"
+      - "cloud support engineer"
+      - "cloud operations engineer"
+  - track: data
+    titles:
+      - "data analyst"
+      - "data engineer"
+      - "business intelligence"
+      - "bi analyst"
+      - "analytics engineer"
+      - "sql developer"
+  - track: cybersecurity
+    titles:
+      - "security analyst"
+      - "cybersecurity analyst"
+      - "soc analyst"
+      - "information security analyst"
+      - "application security"
+      - "security engineer"
+  - track: qa_test
+    titles:
+      - "qa engineer"
+      - "quality assurance engineer"
+      - "software test engineer"
+      - "test automation engineer"
+      - "sdet"
+  - track: it_support
+    titles:
+      - "it support"
+      - "technical support engineer"
+      - "help desk"
+      - "desktop support"
+      - "support engineer"
+  - track: systems_network
+    titles:
+      - "systems administrator"
+      - "system administrator"
+      - "network engineer"
+      - "network administrator"
+      - "linux administrator"
+      - "windows administrator"
+  - track: database
+    titles:
+      - "database administrator"
+      - "dba"
+      - "database engineer"
+      - "etl developer"
+  - track: product_analyst
+    titles:
+      - "technical business analyst"
+      - "business systems analyst"
+      - "product analyst"
+      - "technical product analyst"
+      - "solutions analyst"
+  - track: ai_ml
+    titles:
+      - "machine learning engineer"
+      - "ai engineer"
+      - "ml engineer"
+      - "computer vision engineer"
+      - "nlp engineer"
+
+locations:
+  include:
+    - "United States"
+    - "USA"
+    - "U.S."
+    - "US"
+    - "Remote US"
+    - "Remote"
+    - "Remote (US)"
+    - "Hybrid"
+  exclude_keywords:
+    - "EMEA"
+    - "EU only"
+    - "India"
+    - "Bangalore"
+    - "London"
+    - "Dublin"
+    - "Tokyo"
+
+filters:
+  posted_within_days: 30           # max age at ingest time (loose; UI lets you tighten)
+  exclude_companies: []            # auto-grows when you mark "skip" in dashboard
+  min_fit_score: 7                 # minimum to surface on Today's Fits
+  hide_seen: true                  # never re-show jobs you've skipped/applied to
+  jsearch_query_count_per_track: 5  # broad search: how many title keywords per track
+  jsearch_pages_per_query: 4        # raise to 2-5 for more jobs, uses more RapidAPI quota
+
+scoring:
+  resume_path: "knowledge/resume.pdf"
+
+delivery:
+  dashboard:
+    enabled: true
+    port: 8501
+    default_window: "this_week"    # today | this_week | this_month | all
