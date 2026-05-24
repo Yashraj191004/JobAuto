@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --surface: #ffffff;
+      --ink: #0c1118;
+      --ink-soft: #2a2f3a;
+      --muted: #6b6f78;
+      --line: #e3ddd1;
+      --accent: #0f5a4d;
+      --accent-ink: #073e34;
+      --accent-soft: #e8f1ed;
+      --danger: #a8321b;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter Tight', -apple-system, system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      width: 320px;
+      padding: 0;
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .header {
+      background: var(--ink);
+      color: #f5f2ec;
+      padding: 16px 18px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(400px 100px at 100% 0%, rgba(15, 90, 77, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .kicker {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8a9ba0;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+    }
+    .kicker::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(15, 90, 77, 0.2);
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin: 0;
+      position: relative;
+    }
+    .brand em {
+      font-style: italic;
+      font-weight: 500;
+      color: #5eb5a4;
+    }
+
+    .body {
+      padding: 14px 16px 16px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      padding: 8px 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+    .status .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #c4a04a; flex-shrink: 0;
+    }
+    .status.ok  .dot { background: var(--accent); box-shadow: 0 0 0 3px rgba(15, 90, 77, 0.15); }
+    .status.err .dot { background: var(--danger); }
+    .status .label {
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 10px;
+    }
+
+    .toggle-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 11px 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color .15s ease;
+      margin-bottom: 12px;
+    }
+    .toggle-row:hover { border-color: #c8c0af; }
+    .toggle-row input[type="checkbox"] {
+      margin: 2px 0 0;
+      accent-color: var(--accent);
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .toggle-row .copy {
+      font-size: 12px;
+      line-height: 1.4;
+      color: var(--ink-soft);
+    }
+    .toggle-row .copy strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    button {
+      font-family: var(--font-body);
+      width: 100%;
+      padding: 9px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all .15s ease;
+      letter-spacing: -0.005em;
+    }
+    button:hover {
+      background: var(--accent-ink);
+      border-color: var(--accent-ink);
+    }
+    button.secondary {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid #cbc4b3;
+    }
+    button.secondary:hover {
+      background: #efeae1;
+      border-color: var(--ink-soft);
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .footer code {
+      font-family: var(--font-mono);
+      background: #efeae1;
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: var(--ink);
+      font-size: 10.5px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="kicker">JobAuto · Browser Console</div>
+    <h1 class="brand">Job <em>Agent</em></h1>
+  </div>
+
+  <div class="body">
+    <div class="status" id="status">
+      <span class="dot"></span>
+      <span><span class="label">Status</span> &nbsp; checking backend…</span>
+    </div>
+
+    <label class="toggle-row">
+      <input id="autofillQueued" type="checkbox" />
+      <span class="copy">
+        <strong>Auto-fill on queued pages</strong>
+        Detect when you open an application from the queue and fill visible fields automatically.
+      </span>
+    </label>
+
+    <button id="toggle">Open autofill panel</button>
+    <div class="row">
+      <button class="secondary" id="dash">Open dashboard</button>
+    </div>
+
+    <div class="footer">
+      Backend: <code>http://127.0.0.1:8765</code><br>
+      Start it locally with <code>python -m src.server</code>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

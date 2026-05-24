@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments / secrets
+.env
+.venv/
+venv/
+env/
+
+# Local databases
+db/*.db
+db/*.db-journal
+db/*.db-wal
+db/*.db-shm
+
+# Logs (server, streamlit, anything else)
+*.log
+*.err
+*.err.log
+*.out.log
+outputs/server.log
+outputs/server.err
+streamlit-*.log
+streamlit-*.err.log
+streamlit-*.out.log
+
+# Generated tailored applications
+outputs/*/
+
+# Local cached resume text (regenerable from the PDF/DOCX)
+knowledge/resume.txt
+
+# Personal documents and Q&A bank (contains email, phone, address, personal data)
+knowledge/resume.pdf
+knowledge/qa_bank.json
+search_profile.yaml
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

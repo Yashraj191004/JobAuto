@@ -1,0 +1,17 @@
+profile:
+  name: "Your Name"
+  graduation: "YYYY-MM"
+  authorization: "Work Authorization Status"
+  needs_sponsorship: false
+
+# Multiple tracks — system finds jobs matching any of them
+targets:
+  - track: internship
+    titles:
+      - "software engineering intern"
+      - "software engineer intern"
+    season: "summer, fall, spring"
+  - track: regular_sde
+    titles:
+      - "Software Engineer"
+      - "Software Development Engineer"

@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Job Agent Autofill",
+  "version": "0.2.0",
+  "description": "Click-to-fill job applications using your Job Agent backend (Simplify-style, you-stay-in-control).",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*",
+    "*://*.greenhouse.io/*",
+    "*://boards.greenhouse.io/*",
+    "*://job-boards.greenhouse.io/*",
+    "*://*.lever.co/*",
+    "*://*.ashbyhq.com/*",
+    "*://*.myworkdayjobs.com/*",
+    "*://*.workday.com/*",
+    "*://*.icims.com/*",
+    "*://*.smartrecruiters.com/*",
+    "*://*.jobvite.com/*",
+    "*://*.bamboohr.com/*",
+    "*://*.taleo.net/*",
+    "*://*.successfactors.com/*",
+    "*://*.oraclecloud.com/*",
+    "*://*.workable.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Job Agent",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

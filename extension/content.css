@@ -1,0 +1,89 @@
+#job-agent-panel {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: min(380px, calc(100vw - 32px));
+  max-height: min(74vh, 720px);
+  overflow: hidden;
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 13px;
+  z-index: 2147483647;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#job-agent-panel * {
+  box-sizing: border-box;
+}
+
+#job-agent-panel .ja-header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: 600; font-size: 14px; line-height: 1.25;
+  border-bottom: 1px solid #eee;
+  padding: 8px 10px;
+  gap: 8px;
+}
+#job-agent-panel .ja-header button {
+  background: transparent; border: 1px solid #d0d7de; cursor: pointer;
+  font-size: 11px; margin-left: 4px; color: #555;
+  border-radius: 5px; padding: 3px 6px;
+}
+#job-agent-panel .ja-status {
+  font-size: 11px; color: #666; padding: 8px 10px 4px;
+  line-height: 1.35; white-space: normal;
+}
+#job-agent-panel .ja-job {
+  font-size: 12px; margin-bottom: 8px; padding: 6px 8px;
+  background: #f6f8fa; border-radius: 6px; margin-left: 10px; margin-right: 10px;
+  line-height: 1.35; white-space: normal; overflow-wrap: anywhere;
+}
+#job-agent-panel .ja-actions { display: flex; gap: 6px; margin: 0 10px 10px; }
+#job-agent-panel .ja-actions button {
+  flex: 1; min-width: 0; padding: 6px 8px; font-size: 12px;
+  border: 1px solid #d0d7de; background: #fff; border-radius: 6px; cursor: pointer;
+}
+#job-agent-panel .ja-actions button:hover { background: #f3f4f6; }
+#job-agent-panel .ja-fields {
+  display: flex; flex-direction: column; gap: 4px;
+  overflow-y: auto; max-height: calc(min(74vh, 720px) - 120px);
+  padding: 0 10px 10px;
+}
+#job-agent-panel .ja-row {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 6px; padding: 4px 6px; border-radius: 6px;
+  min-height: 30px;
+}
+#job-agent-panel .ja-row:hover { background: #f6f8fa; }
+#job-agent-panel .ja-lbl {
+  flex: 1; font-size: 12px; color: #24292f;
+  min-width: 0; line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+#job-agent-panel .ja-file-row {
+  align-items: flex-start;
+}
+#job-agent-panel .ja-file-row .ja-lbl {
+  white-space: normal;
+  overflow: visible;
+}
+#job-agent-panel .ja-file-hint {
+  margin-top: 3px;
+  color: #57606a;
+  font-size: 11px;
+  line-height: 1.35;
+  word-break: break-all;
+}
+#job-agent-panel .ja-fill {
+  flex: 0 0 auto;
+  min-width: 54px;
+  padding: 4px 8px; font-size: 11px;
+  background: #1f6feb; color: #fff; border: 0; border-radius: 5px; cursor: pointer;
+}
+#job-agent-panel .ja-fill:hover { background: #1957c2; }
+#job-agent-panel .ja-fill:disabled { background: #9bb6e0; cursor: default; }
+#job-agent-panel .ja-empty { font-size: 12px; color: #888; text-align: center; padding: 10px; }

@@ -1,0 +1,7 @@
+requests>=2.32.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+pypdf>=4.0.0
+streamlit>=1.30.0
+flask>=3.0.0
+flask-cors>=4.0.0
