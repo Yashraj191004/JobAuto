@@ -41,7 +41,6 @@ knowledge/qa_bank.json
 knowledge/*.pdf
 knowledge/*.docx
 knowledge/*.doc
-search_profile.yaml
 
 # OS / editor noise
 .DS_Store
