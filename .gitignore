@@ -38,6 +38,9 @@ knowledge/resume.txt
 # Personal documents and Q&A bank (contains email, phone, address, personal data)
 knowledge/resume.pdf
 knowledge/qa_bank.json
+knowledge/*.pdf
+knowledge/*.docx
+knowledge/*.doc
 search_profile.yaml
 
 # OS / editor noise
